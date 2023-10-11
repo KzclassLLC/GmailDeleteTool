@@ -1,5 +1,5 @@
 /**
- * PRJ_0033_shift
+ * PRJ_00
  *
  * @copyright 2023 Kz class LLC All Rights Reserved.
  */
@@ -20,13 +20,4 @@ function onOpen() {
 function callCopyShiftSheets() {
   // @ts-ignore
   lib.copyShiftSheets();
-}
-
-/**
- * 変更イベント
- *
- * @param {object} e - イベントオブジェクト
- */
-function onChange(e) {
-  lib.onChangeAction(e);
 }
