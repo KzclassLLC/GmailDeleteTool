@@ -1,5 +1,5 @@
 /**
- * PRJ_00
+ * PRJ_0058_gmail
  *
  * @copyright 2023 Kz class LLC All Rights Reserved.
  */
@@ -10,28 +10,36 @@
 function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('gmail削除メニュー')
-    .addItem('自動処理登録', 'setTrigger1Day')
-    .addItem('自動処理解除', 'deleteTrigger')
+    .addItem('自動削除をセットする', 'setTrigger1Hour')
+    .addItem('自動削除をストップする', 'callDeleteTrigger')
     .addSeparator()
-    .addItem('手動実行', 'callDeleteMail')
+    .addItem('1回だけ削除する', 'callDeleteMails')
     .addToUi();
 }
 
 /**
- * 1日トリガーを設定する
- * 毎日23時〜24時の間に実行する
+ * 1時間トリガーを設定する
  */
-function setTrigger1Day() {
+function setTrigger1Hour() {
   // トリガーを削除する
   deleteTrigger();
 
   // トリガーを設定する
-  // 毎日23時に実行する
-  ScriptApp.newTrigger('callDeleteMail')
-    .timeBased()
-    .atHour(23)
-    .everyDays(1)
-    .create();
+  // 毎時間実行する
+  ScriptApp.newTrigger('callDeleteMails').timeBased().everyHours(1).create();
+
+  // トリガーを設定したことを通知する
+  SpreadsheetApp.getUi().alert('自動削除をセットしました。');
+}
+
+/**
+ * トリガー解除呼び出し
+ */
+function callDeleteTrigger() {
+  deleteTrigger();
+
+  // トリガーを解除したことを通知する
+  SpreadsheetApp.getUi().alert('自動削除をストップしました。');
 }
 
 /**
@@ -47,7 +55,10 @@ function deleteTrigger() {
 /**
  * 削除処理呼び出し
  */
-function callDeleteMail() {
-  //   lib.deleteMail();
-  deleteMail();
+function callDeleteMails() {
+  //   lib.deleteMails();
+  deleteMails();
+
+  // 削除処理を通知する
+  SpreadsheetApp.getUi().alert('削除処理が完了しました。');
 }
