@@ -1,8 +1,7 @@
 # Gmail 削除ツール
 
-[English version](#gmail-deletion-tool)
+[English is here](#gmail-deletion-tool)
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](
 Gmail で設定している特定のラベルに基づいて自動的にメールを削除することで、ユーザーが自分の受信トレイを管理するのを支援する Google Apps Script です。
 
 ## 特徴
@@ -10,6 +9,7 @@ Gmail で設定している特定のラベルに基づいて自動的にメー�
 - ユーザー定義のラベルに基づいてメールを削除します。
 - ネストされたラベルをサポートします。
 - 自動削除を設定した後、1 時間につき 100 件の対象メールが削除されます。
+- スプレッドシートの言語設定に基づき、日本語と英語で動作します。サポート外の言語の場合は英語で動作します。
 
 ## 使い方
 
@@ -33,6 +33,7 @@ Gmail で設定している特定のラベルに基づいて自動的にメー�
 
 ## ライセンス
 
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 このプロジェクトは MIT ライセンスの下でライセンスされています。詳細については LICENSE ファイルを参照してください。
 
 # Gmail Deletion Tool
@@ -44,6 +45,7 @@ This Google Apps Script is a Gmail deletion tool that helps users manage their i
 - Deletes emails based on user-defined labels.
 - Supports nested labels.
 - After you set automatic deletion, 100 target emails will be deleted every hour.
+- Works in Japanese and English based on the language setting of the spreadsheet. If the language is not supported, it will work in English.
 
 ## How to Use
 
@@ -67,4 +69,5 @@ This Google Apps Script is a Gmail deletion tool that helps users manage their i
 
 ## License
 
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 This project is licensed under the MIT License. See the LICENSE file for details.
