@@ -3,6 +3,8 @@
 [English is here](#gmail-deletion-tool)
 
 Gmail で設定している特定のラベルに基づいて自動的にメールを削除することで、ユーザーが自分の受信トレイを管理するのを支援する Google Apps Script です。
+Gmail のフィルターを利用してメールを削除する場合は、受信時に削除されるため、メールを確認する前に削除されてしまう可能性があります。
+本スクリプトは、メールを削除するまでの日数を指定することで、一定期間経過後にメールを削除することができます。
 
 ## 特徴
 
@@ -39,6 +41,8 @@ Gmail で設定している特定のラベルに基づいて自動的にメー�
 # Gmail Deletion Tool
 
 This Google Apps Script is a Gmail deletion tool that helps users manage their inbox by automatically deleting emails based on specific labels.
+If you use Gmail's filter to delete emails, they will be deleted when they arrive, so there is a possibility that they will be deleted before you check them.
+This script allows you to delete emails after a certain period of time by specifying the number of days until the emails are deleted.
 
 ## Features
 
