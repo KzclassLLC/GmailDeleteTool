@@ -38,6 +38,10 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    - 自動削除をストップする
    - 一回だけ削除する
 
+   なお、初めて実行する際は、アクセス許可を求められますので、下記ページを参考に、許可をしてください。
+   [https://note.com/kzautomation/n/n4875ba0ed9aa](https://note.com/kzautomation/n/n4875ba0ed9aa)  
+
+
 ## 制限事項
 
 - タイムアウトを防ぐため、1 回の実行で最大 100 通削除します。
@@ -86,6 +90,8 @@ This script allows you to delete emails after a certain period of time by specif
    - Set automatic deletion
    - Stop automatic deletion
    - Delete only once
+
+   When you run it for the first time, you will be asked for permission. Please add the permission.
 
 ## Limitations
 
