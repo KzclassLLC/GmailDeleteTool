@@ -51,9 +51,9 @@ const MESSAGE_TABLE = {
   ja: {
     onOpen: {
       menu: 'Gmail削除ツール',
-      setTrigger1Hour: '▶自動削除をセットする',
-      callDeleteTrigger: '⏹自動削除をストップする',
-      callDeleteMails: '1⃣1回だけ削除する',
+      setTrigger1Hour: '自動削除をセットする',
+      callDeleteTrigger: '自動削除をストップする',
+      callDeleteMails: '1回だけ削除する',
     },
     setTrigger1Hour: {
       finishAlert: '自動削除をセットしました。1時間ごとに実行されます。',
@@ -74,9 +74,9 @@ const MESSAGE_TABLE = {
   en: {
     onOpen: {
       menu: 'Gmail delete tool',
-      setTrigger1Hour: '▶Set automatic deletion',
-      callDeleteTrigger: '⏹Stop automatic deletion',
-      callDeleteMails: '1⃣Delete once',
+      setTrigger1Hour: 'Set automatic deletion',
+      callDeleteTrigger: 'Stop automatic deletion',
+      callDeleteMails: 'Delete once',
     },
     setTrigger1Hour: {
       finishAlert:
