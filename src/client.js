@@ -16,7 +16,7 @@ function onOpen() {
     .addItem(MESSAGE_TABLE[lang].onOpen.setTrigger1Hour, 'setTrigger1Hour')
     .addItem(MESSAGE_TABLE[lang].onOpen.callDeleteTrigger, 'callDeleteTrigger')
     .addSeparator()
-    .addItem(MESSAGE_TABLE[lang].callDeleteMails, 'callDeleteMails')
+    .addItem(MESSAGE_TABLE[lang].onOpen.callDeleteMails, 'callDeleteMails')
     .addToUi();
 }
 
