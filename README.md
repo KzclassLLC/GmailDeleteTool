@@ -18,9 +18,10 @@ Gmail で設定している特定のラベルに基づいて自動的にメー�
 
 2. 本スクリプトを Google スプレッドシートのスクリプトエディタにコピーします。
    対象は下記の 3 つのファイルです。
-   ・ client/client.js
-   ・ src/main.js
-   ・ src/const.js
+
+   - client/client.js
+   - src/main.js
+   - src/const.js
 
 3. スプレッドシートを開き、メニューバーの 'Gmail 削除ツール' をクリックします。
 
@@ -31,9 +32,8 @@ Gmail で設定している特定のラベルに基づいて自動的にメー�
 - ラベルがネストされている場合、スクリプトは子ラベルのみを対象とします。
 - '@' がないラベルや '@' の後に正の整数以外があるラベルは処理されません。
 
-## ライセンス
+## ライセンス ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-[MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 このプロジェクトは MIT ライセンスの下でライセンスされています。詳細については LICENSE ファイルを参照してください。
 
 # Gmail Deletion Tool
@@ -54,9 +54,10 @@ This Google Apps Script is a Gmail deletion tool that helps users manage their i
 
 2. Copy the script to your Google Spreadsheet's script editor.
    The targets are the following three files.
-   ・ client/client.js
-   ・ src/main.js
-   ・ src/const.js
+
+   - client/client.js
+   - src/main.js
+   - src/const.js
 
 3. Open Spreadsheet and click on 'Gmail Deletion Tool' in the menu bar.
 
@@ -67,7 +68,6 @@ This Google Apps Script is a Gmail deletion tool that helps users manage their i
 - The script only targets child labels if the label is nested.
 - The script does not process labels without '@' or with a non-positive integer after '@'.
 
-## License
+## License ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-[MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 This project is licensed under the MIT License. See the LICENSE file for details.
