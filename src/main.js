@@ -1,118 +1,123 @@
 /**
- * PRJ_0058_gmail
+ * Gmail delete tool
+ *
+ * MIT License
  *
  * @copyright 2023 Kz class LLC All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 
 /**
- * gmail削除処理
- * ラベルを元に対象のメールを削除する
+ * Gmail deletion process
+ * Deletes the target email based on the label
  */
 function deleteMails() {
-  // ユーザーラベルの取得
+  // Get user labels
   const labels = GmailApp.getUserLabels();
 
-  logAndToast_('ラベル数：' + labels.length + '件');
+  // Total number of deleted emails
+  let count = 0;
 
-  let count = 0; // 累計削除メール数
-
-  // ラベル名の数だけ削除処理を行う
+  // Perform deletion process for each label name
   for (const label of labels) {
     count = deleteMailByLabel_(label.getName(), count);
 
-    // 削除上限に達した場合は処理を終了する
+    // If the deletion limit is reached, the process is terminated
     if (count >= LIMIT_DELETE_MAIL) {
       break;
     }
   }
 
-  logAndToast_('合計' + count + '件削除しました。');
+  logAndToast_(MESSAGE_TABLE[lang].deleteMails.toast + count);
 }
 
 /**
- * gmailで特定のラベルが付いたメールを取得し、削除する
- * ラベルがネストされている場合、親ラベルには反応せずに、子ラベルのみがこの関数の対象となる
- * 対象メールに複数ラベルが付いている場合は、条件が厳しい方で削除されることになる
+ * Get and delete mail with specific label in gmail
+ * If the label is nested, the parent label will not respond, and only the child label will be the target of this function.
+ * If multiple labels are attached to the target mail, the stricter one will be deleted.
  *
- * @param {string} labelName ラベル名。@の後ろに削除対象の日数があること。
- * @param {number} count 現在削除メール数
- * @return {number} 累計削除メール数
+ * @param {string} labelName Label name. There should be the number of days to delete after @.
+ * @param {number} count Total number of deleted emails
+ * @return {number} Total number of deleted emails
  */
 function deleteMailByLabel_(labelName, count) {
-  // 検索条件を作成
+  // Create search condition
   const condition = makeSearchCondition_(labelName);
 
-  // 検索条件がnullの場合は処理を終了する
+  // If the search condition is null, the process is terminated
   if (condition === null) {
     return count;
   }
 
-  // 削除するメールは合計でLIMIT_DELETE_MAILに抑えることで時間切れを防ぐ
+  // The total number of emails to be deleted is limited to LIMIT_DELETE_MAIL to prevent timeout
   const threads = GmailApp.search(condition, 0, LIMIT_DELETE_MAIL - count);
 
   logAndToast_(
-    'ラベル名:' +
-      labelName +
-      '\n対象メール数:' +
-      threads.length +
-      '件を削除します。'
+    labelName +
+      '\n' +
+      MESSAGE_TABLE[lang].deleteMailByLabel.toast +
+      threads.length
   );
 
   count += threads.length;
 
-  // 検索で取得したスレッドを全て削除する
+  // Delete all threads obtained by search
   GmailApp.moveThreadsToTrash(threads);
 
   return count;
 }
 
 /**
- * 検索条件を作成
- * ラベル名が検索条件を満たさない場合はnullを返す
+ * Create search condition
+ * Returns null if the label name does not meet the search criteria.
  *
- * @param {string} labelName ラベル名。@の後ろに削除対象の日数があること。
- * @return {string|null} 検索条件 or null
+ * @param {string} labelName Label name. There should be the number of days to delete after @.
+ * @return {string|null} Search condition string if valid, null otherwise
+ */
+
+/**
+ * Create search condition
+ * Returns null if the label name does not meet the search criteria.
+ *
+ * @param {string} labelName Label name. There should be the number of days to delete after @.
+ * @return {string|null} Search condition string if valid, null otherwise
  */
 function makeSearchCondition_(labelName) {
-  // @で分割する
-  // @が複数ある場合は、最後の@で分割する
-  const labelNameArray = labelName.split('@');
+  const labelInfo = checkLabelNameValidity_(labelName);
 
-  // labelNameArrayのlengthが1の場合は@が無いため、処理を終了する
-  if (labelNameArray.length === 1) {
-    logAndToast_(
-      '対象外ラベル: ' + labelName + '\n @が無いため、処理をしません。'
-    );
+  if (labelInfo === null) {
     return null;
   }
 
-  // 最後の要素に指定日数が入っている
-  const days = labelNameArray[labelNameArray.length - 1];
-
-  // daysが正の整数でない場合は処理を終了する
-  if (!Number.isInteger(Number(days)) || Number(days) <= 0) {
-    logAndToast_(
-      '対象外ラベル: ' +
-        labelName +
-        '\n @以降が正の整数では無いので、処理をしません。'
-    );
-    return null;
-  }
-
-  // ここに到達する時点で、最後に@と正の整数があることが保証されている
-  // 正味のラベル名を取得するために最後の@と正の整数を削除する
-  labelNameArray.pop();
-  const name = labelNameArray.join('@');
-
-  // CATEGORY_TABLEには、カテゴリというラベルの下に、ソーシャル、新着、プロモーション、フォーラムというラベルがあり、@が付いていない
-  // nameをキーとする値が存在しない場合は、今回のlabelNameはカテゴリではなく、ユーザーラベルであると判断できる
+  // If the label name is not in the CATEGORY_TABLE, it is a user label
+  // CATEGORY_TABLE has labels under the category label, such as Social, New, Promotion, and Forum, without @
   const categoryLabelTable = CATEGORY_TABLE;
-  if (!categoryLabelTable[name]) {
-    categoryLabelTable[name] = 'label: ' + labelName;
+  if (!categoryLabelTable[labelInfo.name]) {
+    categoryLabelTable[labelInfo.name] = 'label: ' + labelName;
   }
 
   const condition =
-    categoryLabelTable[name] + ' older_than:' + days + 'd -is:starred ';
+    categoryLabelTable[labelInfo.name] +
+    ' older_than:' +
+    labelInfo.days +
+    'd -is:starred ';
 
   console.log('search condition:' + condition);
 
@@ -120,9 +125,43 @@ function makeSearchCondition_(labelName) {
 }
 
 /**
- * ログとトースト
+ * Check the validity of the label name
+ * Returns null if the label name does not meet the criteria.
  *
- * @param {string} str ログとトーストに出力する文字列
+ * @param {string} labelName Label name. There should be the number of days to delete after @.
+ * @return {object|null} labelInfo An object containing the name and days if valid, null otherwise
+ * @property {string} labelInfo.name Label name
+ * @property {number} labelInfo.days Number of days to delete
+ */
+function checkLabelNameValidity_(labelName) {
+  const labelNameArray = labelName.split('@');
+
+  if (labelNameArray.length === 1) {
+    logAndToast_(
+      labelName + '\n' + MESSAGE_TABLE[lang].checkLabelNameValidity.noAt
+    );
+    return null;
+  }
+
+  const days = labelNameArray[labelNameArray.length - 1];
+
+  if (!Number.isInteger(Number(days)) || Number(days) <= 0) {
+    logAndToast_(
+      labelName + '\n' + MESSAGE_TABLE[lang].checkLabelNameValidity.noInteger
+    );
+    return null;
+  }
+
+  labelNameArray.pop();
+  const name = labelNameArray.join('@');
+
+  return { name: name, days: days };
+}
+
+/**
+ *  Log and toast
+ *
+ * @param {string} str String to log and toast
  */
 function logAndToast_(str) {
   console.log(str);

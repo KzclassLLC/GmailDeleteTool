@@ -1,49 +1,64 @@
 /**
- * PRJ_0058_gmail
+ * Gmail delete tool
+ *
+ * MIT License
  *
  * @copyright 2023 Kz class LLC All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 
 /**
- * オリジナルメニュー
+ * original menu
  */
 function onOpen() {
+  // set menu
   SpreadsheetApp.getUi()
-    .createMenu('gmail削除メニュー')
-    .addItem('自動削除をセットする', 'setTrigger1Hour')
-    .addItem('自動削除をストップする', 'callDeleteTrigger')
+    .createMenu(MESSAGE_TABLE[lang].onOpen.menu)
+    .addItem(MESSAGE_TABLE[lang].onOpen.setTrigger1Hour, 'setTrigger1Hour')
+    .addItem(MESSAGE_TABLE[lang].onOpen.callDeleteTrigger, 'callDeleteTrigger')
     .addSeparator()
-    .addItem('1回だけ削除する', 'callDeleteMails')
+    .addItem(MESSAGE_TABLE[lang].callDeleteMails, 'callDeleteMails')
     .addToUi();
 }
 
 /**
- * 1時間トリガーを設定する
+ * set 1 hour trigger
  */
 function setTrigger1Hour() {
-  // トリガーを削除する
   deleteTrigger();
-
-  // トリガーを設定する
-  // 毎時間実行する
   ScriptApp.newTrigger('callDeleteMails').timeBased().everyHours(1).create();
-
-  // トリガーを設定したことを通知する
-  SpreadsheetApp.getUi().alert('自動削除をセットしました。');
+  SpreadsheetApp.getUi().alert(MESSAGE_TABLE[lang].setTrigger1Hour.finishAlert);
 }
 
 /**
- * トリガー解除呼び出し
+ * call delete trigger
  */
 function callDeleteTrigger() {
   deleteTrigger();
-
-  // トリガーを解除したことを通知する
-  SpreadsheetApp.getUi().alert('自動削除をストップしました。');
+  SpreadsheetApp.getUi().alert(
+    MESSAGE_TABLE[lang].callDeleteTrigger.finishAlert
+  );
 }
 
 /**
- * トリガー解除
+ * delete trigger
  */
 function deleteTrigger() {
   const triggers = ScriptApp.getProjectTriggers();
@@ -53,12 +68,11 @@ function deleteTrigger() {
 }
 
 /**
- * 削除処理呼び出し
+ * Gmail deletion process
  */
 function callDeleteMails() {
   //   lib.deleteMails();
   deleteMails();
 
-  // 削除処理を通知する
-  SpreadsheetApp.getUi().alert('削除処理が完了しました。');
+  SpreadsheetApp.getUi().alert(MESSAGE_TABLE[lang].callDeleteMails.finishAlert);
 }
