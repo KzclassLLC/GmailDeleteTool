@@ -19,15 +19,13 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    たとえば、'label@30' は、30 日後に 'label' のすべてのメールを削除します。
 
 2. 下記のスプレッドシートを開き、自分の Google ドライブへコピーをします。
+   [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)
+   または、スプレッドシートを開いた後、本スクリプトを Google スプレッドシートのスクリプトエディタにコピーします。
+   対象は下記の 3 つのファイルです。
 
-https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit
-
-または、スプレッドシートを開いた後、本スクリプトを Google スプレッドシートのスクリプトエディタにコピーします。
-対象は下記の 3 つのファイルです。
-
-- client/client.js
-- src/main.js
-- src/const.js
+   - client/client.js
+   - src/main.js
+   - src/const.js
 
 3. スプレッドシートを開き、メニューバーの 'Gmail 削除ツール' をクリックします。
    表示されたメニューから実施する項目を選択します。
@@ -65,14 +63,13 @@ This script allows you to delete emails after a certain period of time by specif
    For example, 'label@30' will delete all emails with 'label' after 30 days.
 
 2. Copy the following spreadsheet to your Google Drive.
-   https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit
+   [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)
+   Or copy scripts to your Google Spreadsheet's script editor.
+   The targets are the following three files.
 
-Or copy scripts to your Google Spreadsheet's script editor.
-The targets are the following three files.
-
-- client/client.js
-- src/main.js
-- src/const.js
+   - client/client.js
+   - src/main.js
+   - src/const.js
 
 3. Open Spreadsheet and click on 'Gmail Deletion Tool' in the menu bar.
    Select the item to be executed from the menu that appears.
