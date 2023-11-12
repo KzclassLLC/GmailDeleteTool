@@ -1,5 +1,5 @@
 /**
- * Gmail delete tool
+ * Gmail Deletion Tool
  *
  * MIT License
  *
