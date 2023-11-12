@@ -1,5 +1,8 @@
 # Gmail 削除ツール
 
+[English version](#gmail-deletion-tool)
+
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](
 Gmail で設定している特定のラベルに基づいて自動的にメールを削除することで、ユーザーが自分の受信トレイを管理するのを支援する Google Apps Script です。
 
 ## 特徴
