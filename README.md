@@ -16,8 +16,8 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
 
 ## 使い方
 
-1. Gmail でラベルを定義します。ラベル名の後には '@' と、メールを削除するまでの日数を指定します。
-   たとえば、'general@365' は、365 日後に 'general@365' のすべてのメールを削除します。
+1. Gmail でラベルを定義します。ラベル名の後には '@' と、メールを削除するまでの日数を指定します。  
+   例えば、'general@365'のラベルがつけられたメールは、受信後 365 日以上経過した場合に削除されます。
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a35f2226-b2a7-4f1d-9728-ae8a87065686)
 
 2. 下記のスプレッドシートを開き、自分の Google ドライブへコピーをします。
@@ -65,11 +65,11 @@ This script allows you to delete emails after a certain period of time by specif
 ## How to Use
 
 1. Define your labels in Gmail. The label name should be followed by '@' and the number of days after which emails should be deleted.
-   For example, 'general@365' will delete all emails with 'general@365' after 365 days.
+   For example, emails with the label 'general@365' will be deleted after 365 days.  
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a35f2226-b2a7-4f1d-9728-ae8a87065686)
 
 2. Copy the following spreadsheet to your Google Drive.
-   [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)
+   [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)  
    After you copied spreadsheet, please check the locale setting of the spreadsheet.  
    Or copy scripts to your Google Spreadsheet's script editor.
    The targets are the following three files.
