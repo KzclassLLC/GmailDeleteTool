@@ -58,7 +58,7 @@ const MESSAGE_TABLE = {
       menu: 'Gmail delete tool',
       setTrigger1Hour: 'Set automatic deletion',
       callDeleteTrigger: 'Stop automatic deletion',
-      callDeleteMails: 'Delete once',
+      callDeleteMails: 'Delete only once',
     },
     setTrigger1Hour: {
       finishAlert:
