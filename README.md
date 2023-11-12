@@ -22,6 +22,8 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
 
 2. 下記のスプレッドシートを開き、自分の Google ドライブへコピーをします。
    [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)  
+   スプレッドシートをコピー後は、スプレッドシートのメニュー＞設定を開き、言語と地域が日本以外の場合は日本に設定してください。
+
    または、スプレッドシートを開いた後、本スクリプトを Google スプレッドシートのスクリプトエディタにコピーします。  
    対象は下記の 3 つのファイルです。
 
@@ -39,8 +41,7 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    - 一回だけ削除する
 
    なお、初めて実行する際は、アクセス許可を求められますので、下記ページを参考に、許可をしてください。
-   [https://note.com/kzautomation/n/n4875ba0ed9aa](https://note.com/kzautomation/n/n4875ba0ed9aa)  
-
+   [https://note.com/kzautomation/n/n4875ba0ed9aa](https://note.com/kzautomation/n/n4875ba0ed9aa)
 
 ## 制限事項
 
@@ -74,7 +75,7 @@ This script allows you to delete emails after a certain period of time by specif
 
 2. Copy the following spreadsheet to your Google Drive.
    [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)  
-   After you copied spreadsheet, please check the locale setting of the spreadsheet.  
+   After you copied spreadsheet, please check the locale setting(menu->settings) of the spreadsheet  
    Or copy scripts to your Google Spreadsheet's script editor.
    The targets are the following three files.
 
