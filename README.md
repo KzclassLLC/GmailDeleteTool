@@ -28,7 +28,7 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    - src/main.js
    - src/const.js
 
-3. スプレッドシートを開き、メニューバーの 'Gmail 削除ツール' をクリックします。
+3. スプレッドシートを開き、メニューバーの一番右にある 'Gmail 削除ツール' をクリックします。
    表示されたメニューから実施する項目を選択します。
    - 自動削除をセットする
    - 自動削除をストップする
@@ -72,7 +72,7 @@ This script allows you to delete emails after a certain period of time by specif
    - src/main.js
    - src/const.js
 
-3. Open Spreadsheet and click on 'Gmail Deletion Tool' in the menu bar.
+3. Open Spreadsheet and click on 'Gmail Deletion Tool' in right side of the menu bar.
    Select the item to be executed from the menu that appears.
    - Set automatic deletion
    - Stop automatic deletion

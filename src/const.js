@@ -55,7 +55,7 @@ const MESSAGE_TABLE = {
   },
   en: {
     onOpen: {
-      menu: 'Gmail delete tool',
+      menu: 'Gmail Deletion tool',
       setTrigger1Hour: 'Set automatic deletion',
       callDeleteTrigger: 'Stop automatic deletion',
       callDeleteMails: 'Delete only once',
