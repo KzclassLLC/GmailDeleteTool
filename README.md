@@ -34,14 +34,17 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
 3. スプレッドシートを開き、メニューバーの一番右にある 'Gmail 削除ツール' をクリックします。
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/851d7c6e-af52-4a0d-a83c-6f448d6e085f)
 
-   表示されたメニューから実施する項目を選択します。
+   下記のメニューが表示されます。
 
    - 自動削除をセットする
    - 自動削除をストップする
    - 一回だけ削除する
 
+   最初に「一回だけ削除する」を実行し、動作を確認してください。
    なお、初めて実行する際は、アクセス許可を求められますので、下記ページを参考に、許可をしてください。
    [https://note.com/kzautomation/n/n4875ba0ed9aa](https://note.com/kzautomation/n/n4875ba0ed9aa)
+   認証を行った後、再度「一回だけ削除する」を実行してください。終了のダイアログが表示されれば、正常に動作しています。
+   その後に「自動削除をセットする」を実行すると、自動削除が開始されます。
 
 ## 制限事項
 
@@ -86,13 +89,16 @@ This script allows you to delete emails after a certain period of time by specif
 3. Open Spreadsheet and click on 'Gmail Deletion Tool' in right side of the menu bar.
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/24fee3aa-6195-48aa-8c03-f2139e9c8501)
 
-   Select the item to be executed from the menu that appears.
+   The following menu will be displayed.
 
    - Set automatic deletion
    - Stop automatic deletion
    - Delete only once
 
+   Please run 'Delete only once' first to check the operation.
    When you run it for the first time, you will be asked for permission. Please add the permission.
+   After authentication, run 'Delete only once' again. If the end dialog is displayed, it is working properly.
+   After that, run 'Set automatic deletion' to start automatic deletion.
 
 ## Limitations
 
