@@ -82,7 +82,6 @@ This script allows you to delete emails after a certain period of time by specif
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/4d7add20-d7a0-4ffa-bb4b-ba07df45db80)
 
    Select the item to be executed from the menu that appears.
-   ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/24fee3aa-6195-48aa-8c03-f2139e9c8501)
 
    - Set automatic deletion
    - Stop automatic deletion
