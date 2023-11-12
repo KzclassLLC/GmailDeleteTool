@@ -25,7 +25,8 @@ const CATEGORY_TABLE = {
 };
 
 // User local language
-let lang = SpreadsheetApp.getActiveSpreadsheet().getSpreadsheetLocale();
+const locale = SpreadsheetApp.getActiveSpreadsheet().getSpreadsheetLocale();
+let lang = locale.split('_')[0];
 
 // message table
 // If you want to add other languages, please add them here.

@@ -17,7 +17,8 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
 ## 使い方
 
 1. Gmail でラベルを定義します。ラベル名の後には '@' と、メールを削除するまでの日数を指定します。
-   たとえば、'label@30' は、30 日後に 'label' のすべてのメールを削除します。
+   たとえば、'general@365' は、365 日後に 'general@365' のすべてのメールを削除します。
+   ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a35f2226-b2a7-4f1d-9728-ae8a87065686)
 
 2. 下記のスプレッドシートを開き、自分の Google ドライブへコピーをします。
    [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)  
@@ -29,7 +30,10 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    - src/const.js
 
 3. スプレッドシートを開き、メニューバーの一番右にある 'Gmail 削除ツール' をクリックします。
+   ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/851d7c6e-af52-4a0d-a83c-6f448d6e085f)
+
    表示されたメニューから実施する項目を選択します。
+
    - 自動削除をセットする
    - 自動削除をストップする
    - 一回だけ削除する
@@ -61,10 +65,12 @@ This script allows you to delete emails after a certain period of time by specif
 ## How to Use
 
 1. Define your labels in Gmail. The label name should be followed by '@' and the number of days after which emails should be deleted.
-   For example, 'label@30' will delete all emails with 'label' after 30 days.
+   For example, 'general@365' will delete all emails with 'general@365' after 365 days.
+   ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a35f2226-b2a7-4f1d-9728-ae8a87065686)
 
 2. Copy the following spreadsheet to your Google Drive.
-   [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)  
+   [https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit](https://docs.google.com/spreadsheets/d/1dRjMZD7eZHcL8aIzlyBBVpI5HbYYpPOXdKDiRb62OPI/edit)
+   After you copied spreadsheet, please check the locale setting of the spreadsheet.  
    Or copy scripts to your Google Spreadsheet's script editor.
    The targets are the following three files.
 
@@ -73,7 +79,11 @@ This script allows you to delete emails after a certain period of time by specif
    - src/const.js
 
 3. Open Spreadsheet and click on 'Gmail Deletion Tool' in right side of the menu bar.
+   ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/4d7add20-d7a0-4ffa-bb4b-ba07df45db80)
+
    Select the item to be executed from the menu that appears.
+   ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/24fee3aa-6195-48aa-8c03-f2139e9c8501)
+
    - Set automatic deletion
    - Stop automatic deletion
    - Delete only once
