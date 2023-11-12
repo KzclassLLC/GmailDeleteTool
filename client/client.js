@@ -71,7 +71,6 @@ function deleteTrigger() {
  * Gmail deletion process
  */
 function callDeleteMails() {
-  //   lib.deleteMails();
   deleteMails();
 
   SpreadsheetApp.getUi().alert(MESSAGE_TABLE[lang].callDeleteMails.finishAlert);

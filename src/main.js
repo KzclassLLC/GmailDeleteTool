@@ -91,14 +91,6 @@ function deleteMailByLabel_(labelName, count) {
  * @param {string} labelName Label name. There should be the number of days to delete after @.
  * @return {string|null} Search condition string if valid, null otherwise
  */
-
-/**
- * Create search condition
- * Returns null if the label name does not meet the search criteria.
- *
- * @param {string} labelName Label name. There should be the number of days to delete after @.
- * @return {string|null} Search condition string if valid, null otherwise
- */
 function makeSearchCondition_(labelName) {
   const labelInfo = checkLabelNameValidity_(labelName);
 
@@ -136,6 +128,7 @@ function makeSearchCondition_(labelName) {
 function checkLabelNameValidity_(labelName) {
   const labelNameArray = labelName.split('@');
 
+  // If the label name does not contain @, it is not a target
   if (labelNameArray.length === 1) {
     logAndToast_(
       labelName + '\n' + MESSAGE_TABLE[lang].checkLabelNameValidity.noAt
@@ -145,6 +138,7 @@ function checkLabelNameValidity_(labelName) {
 
   const days = labelNameArray[labelNameArray.length - 1];
 
+  // If the number of days to delete is not a positive integer, it is not a target
   if (!Number.isInteger(Number(days)) || Number(days) <= 0) {
     logAndToast_(
       labelName + '\n' + MESSAGE_TABLE[lang].checkLabelNameValidity.noInteger
@@ -152,6 +146,7 @@ function checkLabelNameValidity_(labelName) {
     return null;
   }
 
+  // Remove the number of days from the label name
   labelNameArray.pop();
   const name = labelNameArray.join('@');
 
@@ -159,7 +154,7 @@ function checkLabelNameValidity_(labelName) {
 }
 
 /**
- *  Log and toast
+ * Log and toast
  *
  * @param {string} str String to log and toast
  */
