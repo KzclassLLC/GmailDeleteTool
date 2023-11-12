@@ -40,7 +40,7 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
 
 ## 制限事項
 
-- タイムアウトを防ぐため、削除するメールの総数には制限があります。
+- タイムアウトを防ぐため、1 回の実行で最大 100 通削除します。
 - ラベルがネストされている場合、スクリプトは子ラベルのみを対象とします。
 - '@' がないラベルや '@' の後に正の整数以外があるラベルは処理されません。
 
@@ -89,7 +89,7 @@ This script allows you to delete emails after a certain period of time by specif
 
 ## Limitations
 
-- The total number of emails to be deleted is limited to prevent timeout.
+- The total number of emails to be deleted is limited to 100 per execution to prevent timeouts.
 - The script only targets child labels if the label is nested.
 - The script does not process labels without '@' or with a non-positive integer after '@'.
 
