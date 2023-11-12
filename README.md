@@ -24,7 +24,7 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    または、スプレッドシートを開いた後、本スクリプトを Google スプレッドシートのスクリプトエディタにコピーします。  
    対象は下記の 3 つのファイルです。
 
-   - client/client.js
+   - src/client.js
    - src/main.js
    - src/const.js
 
@@ -68,7 +68,7 @@ This script allows you to delete emails after a certain period of time by specif
    Or copy scripts to your Google Spreadsheet's script editor.
    The targets are the following three files.
 
-   - client/client.js
+   - src/client.js
    - src/main.js
    - src/const.js
 
