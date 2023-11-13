@@ -20,8 +20,8 @@ Gmail のフィルターを利用してメールを削除する場合は、受�
    例えば、'general@365'のラベルがつけられたメールは、受信後 365 日以上経過した場合に削除されます。
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a35f2226-b2a7-4f1d-9728-ae8a87065686)
 
-   カテゴリに分類されているメールについては、下記のように、カテゴリというラベルにネストしたラベルを用意します。
-   カテゴリ/プロモーション@30
+   カテゴリに分類されているメールについては、下記のように、カテゴリというラベルにネストしたラベルを用意します。  
+   カテゴリ/プロモーション@30  
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/b91de45c-4133-4110-87d2-b0ee06f319b9)
 
 2. 下記のスプレッドシートを開き、自分の Google ドライブへコピーをします。
@@ -80,7 +80,8 @@ This script allows you to delete emails after a certain period of time by specif
    For example, emails with the label 'general@365' will be deleted after 365 days.  
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a35f2226-b2a7-4f1d-9728-ae8a87065686)
 
-   For emails that are categorized, prepare a label nested in the label called 'categories' as follows.
+   For emails that are categorized, prepare a label nested in the label called 'categories' as follows.  
+   categories/Promotion@30  
    ![image](https://github.com/KzclassLLC/GmailDeletionTool/assets/110751257/a7da4b5f-dd85-4b0e-a2e6-e49eaedb2fb8)
 
 2. Copy the following spreadsheet to your Google Drive.
