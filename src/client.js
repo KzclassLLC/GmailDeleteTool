@@ -54,6 +54,4 @@ function deleteTrigger() {
  */
 function callDeleteMails() {
   deleteMails();
-
-  SpreadsheetApp.getUi().alert(MESSAGE_TABLE[lang].callDeleteMails.finishAlert);
 }
